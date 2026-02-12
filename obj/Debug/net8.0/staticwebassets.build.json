@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "MOWiKATNcYAlrRMT6SzgakmUD77fWm3SfZSl1DkbzRc=",
+  "Source": "FundAdministration.Api",
+  "BasePath": "_content/FundAdministration.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

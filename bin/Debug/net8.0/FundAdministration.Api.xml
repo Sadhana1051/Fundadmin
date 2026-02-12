@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FundAdministration.Api</name>
+    </assembly>
+    <members>
+        <member name="T:FundAdministration.Api.Controllers.AuthController">
+            <summary>Authentication - development token endpoint</summary>
+        </member>
+        <member name="M:FundAdministration.Api.Controllers.AuthController.GetToken">
+            <summary>Get a JWT token for development/testing (no auth required)</summary>
+        </member>
+        <member name="T:FundAdministration.Api.Controllers.TokenResponse">
+            <summary>Token response</summary>
+        </member>
+        <member name="M:FundAdministration.Api.Controllers.TokenResponse.#ctor(System.String,System.Int32)">
+            <summary>Token response</summary>
+        </member>
+        <member name="T:FundAdministration.Api.Controllers.FundsController">
+            <summary>CRUD operations for investment funds</summary>
+        </member>
+        <member name="M:FundAdministration.Api.Controllers.FundsController.GetAll(System.Threading.CancellationToken)">
+            <summary>Get all funds</summary>
+        </member>
+        <member name="M:FundAdministration.Api.Controllers.FundsController.GetById(System.Guid,System.Threading.CancellationToken)">
+            <summary>Get a fund by ID</summary>
+        </member>
+        <member name="M:FundAdministration.Api.Controllers.FundsController.Create(FundAdministration.Api.DTOs.FundCreateDto,System.Threading.CancellationToken)">
+            <summary>Create a new fund</summary>
+        </member>
+        <member name="M:FundAdministration.Api.Controllers.FundsController.Update(System.Guid,FundAdministration.Api.DTOs.FundCreateDto,System.Threading.CancellationToken)">
+            <summary>Update an existing fund</summary>
+        </member>
+        <member name="M:FundAdministration.Api.Controllers.FundsController.Delete(System.Guid,System.Threading.CancellationToken)">
+            <summary>Delete a fund</summary>
+        </member>
+        <member name="T:FundAdministration.Api.Controllers.InvestorsController">
+            <summary>CRUD operations for investors</summary>
+        </member>
+        <member name="M:FundAdministration.Api.Controllers.InvestorsController.GetAll(System.Threading.CancellationToken)">
+            <summary>Get all investors</summary>
+        </member>
+        <member name="M:FundAdministration.Api.Controllers.InvestorsController.GetByFund(System.Guid,System.Threading.CancellationToken)">
+            <summary>Get investors by fund ID</summary>
+        </member>
+        <member name="M:FundAdministration.Api.Controllers.InvestorsController.GetById(System.Guid,System.Threading.CancellationToken)">
+            <summary>Get an investor by ID</summary>
+        </member>
+        <member name="M:FundAdministration.Api.Controllers.InvestorsController.Create(FundAdministration.Api.DTOs.InvestorCreateDto,System.Threading.CancellationToken)">
+            <summary>Create a new investor</summary>
+        </member>
+        <member name="M:FundAdministration.Api.Controllers.InvestorsController.Update(System.Guid,FundAdministration.Api.DTOs.InvestorUpdateDto,System.Threading.CancellationToken)">
+            <summary>Update an existing investor</summary>
+        </member>
+        <member name="M:FundAdministration.Api.Controllers.InvestorsController.Delete(System.Guid,System.Threading.CancellationToken)">
+            <summary>Delete an investor</summary>
+        </member>
+        <member name="T:FundAdministration.Api.Controllers.TransactionsController">
+            <summary>Transaction registration and queries</summary>
+        </member>
+        <member name="M:FundAdministration.Api.Controllers.TransactionsController.Create(FundAdministration.Api.DTOs.TransactionCreateDto,System.Threading.CancellationToken)">
+            <summary>Register a new transaction (subscription or redemption)</summary>
+        </member>
+        <member name="M:FundAdministration.Api.Controllers.TransactionsController.GetByInvestor(System.Guid,System.Threading.CancellationToken)">
+            <summary>Get all transactions for a specific investor</summary>
+        </member>
+        <member name="M:FundAdministration.Api.Controllers.TransactionsController.GetFundTotals(System.Guid,System.Threading.CancellationToken)">
+            <summary>Get total subscribed and redeemed amounts for a fund</summary>
+        </member>
+        <member name="T:FundAdministration.Api.Controllers.ReportsController">
+            <summary>Reporting endpoints: net investment and investor counts per fund</summary>
+        </member>
+        <member name="M:FundAdministration.Api.Controllers.ReportsController.GetFundReport(System.Threading.CancellationToken)">
+            <summary>Get report: net investment and investor count per fund</summary>
+        </member>
+        <member name="T:FundAdministration.Api.DTOs.FundCreateDto">
+            <summary>Fund create/update payload</summary>
+        </member>
+        <member name="M:FundAdministration.Api.DTOs.FundCreateDto.#ctor(System.String,System.String,System.DateTime)">
+            <summary>Fund create/update payload</summary>
+        </member>
+        <member name="T:FundAdministration.Api.DTOs.FundReadDto">
+            <summary>Fund response</summary>
+        </member>
+        <member name="M:FundAdministration.Api.DTOs.FundReadDto.#ctor(System.Guid,System.String,System.String,System.DateTime)">
+            <summary>Fund response</summary>
+        </member>
+        <member name="T:FundAdministration.Api.DTOs.FundReportDto">
+            <summary>Fund report: net investment and investor count</summary>
+        </member>
+        <member name="M:FundAdministration.Api.DTOs.FundReportDto.#ctor(System.Guid,System.String,System.Int32,System.Decimal)">
+            <summary>Fund report: net investment and investor count</summary>
+        </member>
+        <member name="T:FundAdministration.Api.DTOs.FundTotalsDto">
+            <summary>Total subscribed and redeemed amounts for a fund</summary>
+        </member>
+        <member name="M:FundAdministration.Api.DTOs.FundTotalsDto.#ctor(System.Guid,System.Decimal,System.Decimal)">
+            <summary>Total subscribed and redeemed amounts for a fund</summary>
+        </member>
+        <member name="T:FundAdministration.Api.DTOs.InvestorCreateDto">
+            <summary>Investor create payload</summary>
+        </member>
+        <member name="M:FundAdministration.Api.DTOs.InvestorCreateDto.#ctor(System.String,System.String,System.Guid)">
+            <summary>Investor create payload</summary>
+        </member>
+        <member name="T:FundAdministration.Api.DTOs.InvestorUpdateDto">
+            <summary>Investor update payload</summary>
+        </member>
+        <member name="M:FundAdministration.Api.DTOs.InvestorUpdateDto.#ctor(System.String,System.String)">
+            <summary>Investor update payload</summary>
+        </member>
+        <member name="T:FundAdministration.Api.DTOs.InvestorReadDto">
+            <summary>Investor response</summary>
+        </member>
+        <member name="M:FundAdministration.Api.DTOs.InvestorReadDto.#ctor(System.Guid,System.String,System.String,System.Guid)">
+            <summary>Investor response</summary>
+        </member>
+        <member name="T:FundAdministration.Api.Middleware.ExceptionHandlingMiddleware">
+            <summary>Global exception handler producing RFC 7807 ProblemDetails</summary>
+        </member>
+    </members>
+</doc>

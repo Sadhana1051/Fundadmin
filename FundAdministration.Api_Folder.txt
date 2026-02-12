@@ -1,0 +1,46 @@
+FundAdministration.Api
+│
+├── Controllers
+│   ├── FundsController.cs
+│   ├── InvestorsController.cs
+│   ├── TransactionsController.cs
+│   └── ReportsController.cs
+│
+├── Data
+│   ├── AppDbContext.cs
+│
+├── Entities
+│   ├── Fund.cs
+│   ├── Investor.cs
+│   ├── Transaction.cs
+│   └── TransactionType.cs
+│
+├── DTOs
+│   ├── FundDtos.cs
+│   ├── InvestorDtos.cs
+│   ├── TransactionDtos.cs
+│   └── ReportDtos.cs
+│
+├── Repositories
+│   ├── Interfaces
+│   │   ├── IFundRepository.cs
+│   │   ├── IInvestorRepository.cs
+│   │   └── ITransactionRepository.cs
+│   └── Implementations
+│       ├── FundRepository.cs
+│       ├── InvestorRepository.cs
+│       └── TransactionRepository.cs
+│
+├── Services
+│   ├── Interfaces
+│   │   ├── IFundService.cs
+│   │   └── ITransactionService.cs
+│   └── Implementations
+│       ├── FundService.cs
+│       └── TransactionService.cs
+│
+├── Middleware
+│   └── ExceptionHandlingMiddleware.cs
+│
+├── Program.cs
+└── appsettings.json
