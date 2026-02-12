@@ -7,7 +7,6 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace FundAdministration.Api.Controllers;
 
-/// <summary>Authentication - development token endpoint</summary>
 [ApiController]
 [Route("api/v{version:apiVersion}/[controller]")]
 [ApiVersion("1.0")]
@@ -18,7 +17,6 @@ public class AuthController : ControllerBase
 
     public AuthController(IConfiguration config) => _config = config;
 
-    /// <summary>Get a JWT token for development/testing (no auth required)</summary>
     [HttpPost("token")]
     [ProducesResponseType(typeof(TokenResponse), StatusCodes.Status200OK)]
     public IActionResult GetToken()
@@ -37,5 +35,4 @@ public class AuthController : ControllerBase
     }
 }
 
-/// <summary>Token response</summary>
 public record TokenResponse(string Token, int ExpiresInHours);

@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FundAdministration.Api.Middleware;
 
-/// <summary>Global exception handler producing RFC 7807 ProblemDetails</summary>
 public class ExceptionHandlingMiddleware
 {
     private readonly RequestDelegate _next;

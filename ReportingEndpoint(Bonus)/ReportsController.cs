@@ -7,7 +7,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FundAdministration.Api.Controllers;
 
-/// <summary>Reporting endpoints: net investment and investor counts per fund</summary>
 [ApiController]
 [Route("api/v{version:apiVersion}/[controller]")]
 [ApiVersion("1.0")]
@@ -18,7 +17,6 @@ public class ReportsController : ControllerBase
 
     public ReportsController(AppDbContext context) => _context = context;
 
-    /// <summary>Get report: net investment and investor count per fund</summary>
     [HttpGet("funds")]
     [ProducesResponseType(typeof(IEnumerable<FundReportDto>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetFundReport(CancellationToken ct)

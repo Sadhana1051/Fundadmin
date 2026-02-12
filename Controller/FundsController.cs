@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FundAdministration.Api.Controllers;
 
-/// <summary>CRUD operations for investment funds</summary>
 [ApiController]
 [Route("api/v{version:apiVersion}/[controller]")]
 [ApiVersion("1.0")]
@@ -16,13 +15,11 @@ public class FundsController : ControllerBase
 
     public FundsController(IFundService service) => _service = service;
 
-    /// <summary>Get all funds</summary>
     [HttpGet]
     [ProducesResponseType(typeof(IEnumerable<FundReadDto>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetAll(CancellationToken ct) =>
         Ok(await _service.GetAllAsync(ct));
 
-    /// <summary>Get a fund by ID</summary>
     [HttpGet("{id:guid}")]
     [ProducesResponseType(typeof(FundReadDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -32,7 +29,6 @@ public class FundsController : ControllerBase
         return fund is null ? NotFound() : Ok(fund);
     }
 
-    /// <summary>Create a new fund</summary>
     [HttpPost]
     [ProducesResponseType(typeof(FundReadDto), StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -42,7 +38,6 @@ public class FundsController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = fund.FundId }, fund);
     }
 
-    /// <summary>Update an existing fund</summary>
     [HttpPut("{id:guid}")]
     [ProducesResponseType(typeof(FundReadDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -52,7 +47,6 @@ public class FundsController : ControllerBase
         return fund is null ? NotFound() : Ok(fund);
     }
 
-    /// <summary>Delete a fund</summary>
     [HttpDelete("{id:guid}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
